@@ -1,0 +1,300 @@
+/* =====================
+   GLOBAL RESET & TOKENS
+===================== */
+
+:root {
+  --bg-main: #1a0033;
+  --bg-soft: #2d1b69;
+  --bg-glass: rgba(255, 215, 0, 0.08);
+
+  --text-main: #000000;
+  --text-muted: #333333;
+
+  --border-soft: rgba(255, 215, 0, 0.2);
+  --border-strong: rgba(255, 215, 0, 0.4);
+
+  --accent: #ffd700;
+  --accent-purple: #9b59b6;
+  --accent-purple-light: #bb8fce;
+  --accent-gold: #ffd700;
+  --accent-gold-light: #fff3cd;
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* =====================
+   BASE
+===================== */
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
+  background: linear-gradient(135deg, #2d1b69, #1a0033);
+  color: var(--text-main);
+  min-height: 100vh;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* =====================
+   LOGO
+===================== */
+
+.logo-image {
+  height: 42px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 50%;
+  border: 2px solid var(--accent-gold);
+}
+
+/* =====================
+   NAVBAR
+===================== */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(45, 27, 105, 0.9);
+  border-bottom: 1px solid var(--border-soft);
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.6px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.4rem;
+}
+
+.nav-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+}
+
+.nav-links a:hover {
+  color: var(--accent-gold);
+  background: rgba(255, 215, 0, 0.1);
+  border-color: var(--border-soft);
+}
+
+/* =====================
+   HERO
+===================== */
+
+.hero {
+  padding: 6rem 2rem 4rem;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 3.3rem;
+  font-weight: 700;
+  letter-spacing: -1px;
+  margin-bottom: 1.2rem;
+  background: linear-gradient(135deg, var(--accent-gold), var(--accent-purple-light));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+}
+
+.hero h1::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--accent-gold), transparent);
+  border-radius: 1px;
+}
+
+.hero p {
+  max-width: 620px;
+  margin: 2rem auto 0;
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+}
+
+/* =====================
+   TOOL AREA
+===================== */
+
+.tool-area {
+  max-width: 720px;
+  margin: 3rem auto;
+  padding: 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  background: rgba(45, 27, 105, 0.3);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-soft);
+}
+
+/* =====================
+   BUTTONS
+===================== */
+
+.upload-btn,
+.actions button {
+  background: rgba(255, 215, 0, 0.15);
+  color: var(--accent-gold);
+  border: 1px solid var(--border-soft);
+  border-radius: var(--radius-md);
+  padding: 1rem 2.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.upload-btn:hover,
+.actions button:hover {
+  border-color: var(--accent-gold);
+  background: rgba(255, 215, 0, 0.25);
+}
+
+/* =====================
+   CANVAS
+===================== */
+
+.canvas-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+canvas {
+  width: 100%;
+  max-width: 600px;
+  background: var(--bg-soft);
+  border-radius: var(--radius-lg);
+  border: 2px solid var(--border-soft);
+}
+
+canvas:hover {
+  border-color: var(--accent-gold);
+}
+
+/* =====================
+   ACTION GROUP
+===================== */
+
+.actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* =====================
+   STATES
+===================== */
+
+.hidden {
+  display: none;
+}
+
+.loading {
+  width: 36px;
+  height: 36px;
+  border: 2px solid var(--border-soft);
+  border-top-color: var(--accent-gold);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* =====================
+   ACCESSIBILITY
+===================== */
+
+button:focus-visible {
+  outline: 2px solid var(--text-main);
+  outline-offset: 2px;
+}
+
+/* =====================
+   RESPONSIVE
+===================== */
+
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .nav-links a {
+    font-size: 1rem;
+  }
+
+  .tool-area {
+    margin: 2rem 1rem;
+    padding: 1.5rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .actions button {
+    width: 100%;
+  }
+
+  .tool-area {
+    margin: 1rem 0.5rem;
+    padding: 1rem 0.5rem;
+  }
+
+  .upload-btn,
+  .actions button {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}

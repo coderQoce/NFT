@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DEGEN PFP Changer</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="nav-inner">
+      <div class="logo">
+        <img src="logo.jpg" alt="DEGEN Logo" class="logo-image">
+      </div>
+      <ul class="nav-links">
+        <li><a href="https://x.com/degentokenbase" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></li>
+        <li><a href="https://discord.gg/MSD89EcKj" target="_blank"><i class="fa-brands fa-discord"></i></a></li>
+        <li><a href="https://www.degen.tips/" target="_blank"><i class="fa-solid fa-globe"></i></a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <header class="hero">
+    <h1>DEGEN PFP Changer</h1>
+    <p>Upload a photo, watch the background disappear, and frame it instantly.</p>
+  </header>
+
+
+  <section class="tool-area">
+
+    <label for="upload" class="upload-btn">Upload Photo</label>
+    <input type="file" id="upload" accept="image/*" hidden />
+
+    <div class="canvas-wrapper">
+      <canvas id="canvas"></canvas>
+    </div>
+
+    <div class="actions">
+      <button id="download" class="hidden">Download Image</button>
+      <button id="twitter-btn" class="hidden">Use as Twitter PFP</button>
+      <button id="discord-btn" class="hidden">Use as Discord PFP</button>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
