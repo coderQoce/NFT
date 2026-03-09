@@ -1,4 +1,4 @@
-letsdocument.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
   initializeApp();
 });
 
